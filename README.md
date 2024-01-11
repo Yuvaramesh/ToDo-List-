@@ -43,7 +43,63 @@ HTML code represents a basic structure for a Todo List web application. Here's a
 
 HTML structure provides a foundation for a Todo List application with features like adding tasks, filtering tasks, and changing themes. The dynamic aspects and interactions are likely implemented using JavaScript (as indicated by the script tags). Additionally, the styling is facilitated by external CSS frameworks (Tailwind CSS and DaisyUI) along with a custom `style.css`.
 
-The JavaScript code is part of a Todo List web application. Below is a breakdown of its main components and functionalities:
+
+`style.css`.
+
+1. **Font and Box Model:**
+   - Applies Poppins font.
+   - Universal box model reset.
+
+2. **Color Variables:**
+   - Defines primary and secondary colors.
+
+3. **Body Styles:**
+   - Centers and aligns body content.
+   - Uses Poppins font.
+
+4. **Author Text Styling:**
+   - Positioned at the bottom.
+   - Centered text with margin.
+
+5. **Container Styles:**
+   - Flex container with centered content.
+   - Bordered, shadowed, and blurred background.
+   - Responsive width and padding.
+
+6. **Header Styles:**
+   - Flex header with centered content.
+   - Responsive font and margin.
+
+7. **Alert Message Styles:**
+   - Scaled transition effect.
+   - Display toggle for show/hide.
+
+8. **Input Section Styles:**
+   - Flex input section with space between items.
+   - Responsive input width.
+
+9. **Todos Filter Styles:**
+   - Flex container with space between items.
+
+10. **Todos List Styles:**
+    - Flex column with scrollable overflow.
+    - Responsive min and max height.
+
+11. **Todo Item Styles:**
+    - Flex row with space between items.
+    - Border-bottom for separation.
+
+12. **Todo Actions Styles:**
+    - Flex row with end alignment.
+    - Responsive margin for buttons.
+
+13. **Theme Switcher Styles:**
+    - Positioned at top-right.
+
+14. **Responsive Media Query:**
+    - Adjusts container margins and widths for small screens.
+
+**The JavaScript code is part of a Todo List web application. Below is a breakdown of its main components and functionalities:**
 ### `app.js`:
 
 1. **Variables:**
