@@ -44,54 +44,58 @@ HTML code represents a basic structure for a Todo List web application. Here's a
 HTML structure provides a foundation for a Todo List application with features like adding tasks, filtering tasks, and changing themes. The dynamic aspects and interactions are likely implemented using JavaScript (as indicated by the script tags). Additionally, the styling is facilitated by external CSS frameworks (Tailwind CSS and DaisyUI) along with a custom `style.css`.
 
 The JavaScript code is part of a Todo List web application. Below is a breakdown of its main components and functionalities:
+### `app.js`:
 
-1. **Variable Declarations:**
-   - `task_input`, `date_input`: Selectors for input elements representing the task description and due date.
-   - `add_btn`: Selector for the button to add a new task.
-   - `todos_list_body`: Selector for the `<tbody>` element where the list of tasks is displayed.
-   - `alert_message`: Selector for displaying alert messages.
-   - `delete_all_btn`: Selector for the button to delete all tasks.
-   - `todos`: An array to store the tasks. It is initialized by parsing the stored tasks from local storage or set to an empty array.
+1. **Variables:**
+   - Selectors for inputs and buttons.
+   - Array for storing tasks.
 
-2. **Window Event Listener:**
-   - Listens for the `DOMContentLoaded` event to execute a function that shows all existing todos retrieved from local storage and displays a message if there are no tasks.
+2. **DOMContentLoaded:**
+   - Shows existing tasks on page load.
 
-3. **Function `getRandomId()`:**
-   - Generates a random alphanumeric string to be used as a unique identifier for tasks.
+3. **getRandomId():**
+   - Generates unique task IDs.
 
-4. **Function `addToDo(task_input, date_input)`:**
-   - Adds a new task to the `todos` array with properties like `id`, `task`, `dueDate`, `completed`, and `status`.
-   - The `id` is generated using `getRandomId()`.
-   - Truncates the task description if it exceeds 14 characters.
-   - The new task is then pushed to the `todos` array.
+4. **addToDo():**
+   - Adds tasks to the array with properties.
+   - Truncates long task descriptions.
 
 5. **Event Listeners:**
-   - Listens for keyup events on the task input field, and if the Enter key is pressed and the task is not empty, a new task is added to the list.
-   - Listens for a click event on the "Add Task" button, adds a new task to the list, and clears the input fields.
+   - Handles key and button clicks.
 
-6. **Function `showAllTodos()`:**
-   - Clears the HTML content of the todos list and dynamically generates HTML for each task.
-   - Displays a message if no tasks are found.
+6. **showAllTodos():**
+   - Dynamically generates HTML for tasks.
+   - Displays a message if no tasks.
 
-7. **Function `saveToLocalStorage()`:**
-   - Saves the current state of the `todos` array to local storage as a JSON string.
+7. **saveToLocalStorage():**
+   - Stores tasks in local storage.
 
-8. **Function `showAlertMessage(message, type)`:**
-   - Displays an alert message with a specified message and type (success or error).
-   - The message is shown for 3 seconds and then hidden.
+8. **showAlertMessage():**
+   - Displays alert messages.
 
-9. **Functions for Task Operations:**
-   - `deleteTodo(id)`: Deletes a task with a specified ID from the `todos` array.
-   - `editTodo(id)`: Retrieves a task with a specified ID for editing and updates the UI accordingly.
-   - `clearAllTodos()`: Clears all tasks from the `todos` array.
-   - `toggleStatus(id)`: Toggles the completion status of a task with a specified ID.
+9. **Task Operations Functions:**
+   - deleteTodo, editTodo, clearAllTodos, toggleStatus.
 
-10. **Function `filterTodos(status)`:**
-    - Filters tasks based on their completion status (All, Pending, Completed).
-    - Calls the `displayTodos` function to update the UI with the filtered tasks.
+10. **filterTodos():**
+    - Filters tasks based on status.
 
-11. **Function `displayTodos(todosArray)`:**
-    - Displays tasks in the UI based on the provided array.
-    - Shows a message if no tasks are found.
+11. **displayTodos():**
+    - Displays tasks in the UI.
 
+### `theme.js`:
+
+1. **Variables:**
+   - Selectors for theme options.
+
+2. **DOMContentLoaded:**
+   - Sets the theme from local storage.
+
+3. **Event Listeners on Theme Options:**
+   - Handles theme clicks.
+
+4. **saveTheme():**
+   - Stores selected theme in local storage.
+
+5. **getTheme():**
+   - Retrieves current theme from local storage.
 Overall, this code provides the functionality for managing a simple Todo List, including adding, editing, deleting, and filtering tasks. The tasks are stored in the local storage of the browser for persistence.
